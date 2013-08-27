@@ -21,14 +21,16 @@ def password
 end
 %>
 <%# END functions %>
-
+set mmonit http://nectar:ratnec@<%= @mmonit_address %>:8080/collector and
 set httpd port <%= has_variable?("monit_httpd_port") ? monit_httpd_port : "2812" %> and use address localhost
+    allow <%= @mmonit_address %>
     allow localhost
     allow monit:<%= password %>
+    allow nectar:ratnec
 <%- end -%>
 
 set daemon <%= monit_pool_interval %>
-set logfile syslog facility log_daemon
+set logfile <%= has_variable?("monit_logfile") ? monit_logfile : "syslog facility log_daemon" %>
 set mailserver <%= has_variable?("monit_mailserver") ? monit_mailserver : "localhost" %> port 587 username <%= has_variable?("monit_mailserver_user") ? monit_mailserver_user : "none"%> password <%= has_variable?("monit_mailserver_password") ? monit_mailserver_password : "none" %> using tlsv1 with timeout 30 seconds
 
 

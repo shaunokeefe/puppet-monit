@@ -32,6 +32,9 @@
 # monit_httpd_port:           what port should the httpd run on?
 #                             Default: 2812
 #
+# monit_logfile:              the logfile Monit should use 
+#                             Default: "syslog facility log_daemon"
+#
 #
 # monit_mailserver:           where should monit be sending mail?
 #                             set this to the mailserver
