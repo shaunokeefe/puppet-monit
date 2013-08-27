@@ -37,6 +37,14 @@
 #                             set this to the mailserver
 #                             Default: localhost
 #
+# monit_mailserver_user:      where should monit be sending mail?
+#                             set this to the mailserver
+#                             Default: None
+#
+# monit_mailserver_passowrd:  where should monit be sending mail?
+#                             set this to the mailserver
+#                             Default: None
+#
 # monit_pool_interval:        how often (in seconds) should monit poll?
 #                             Default: 120
 #
