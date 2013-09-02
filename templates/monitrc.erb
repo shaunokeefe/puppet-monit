@@ -33,7 +33,7 @@ set daemon <%= monit_pool_interval %>
 set logfile <%= has_variable?("monit_logfile") ? monit_logfile : "syslog facility log_daemon" %>
 set mailserver <%= has_variable?("monit_mailserver") ? monit_mailserver : "localhost" %> port 587 username <%= has_variable?("monit_mailserver_user") ? monit_mailserver_user : "none"%> password <%= has_variable?("monit_mailserver_password") ? monit_mailserver_password : "none" %> using tlsv1 with timeout 30 seconds
 
-
+<%= @monit_mail_format %>
 
 # Include settings from other files
 include /etc/monit/conf.d/*.monitrc

@@ -51,6 +51,9 @@
 # monit_pool_interval:        how often (in seconds) should monit poll?
 #                             Default: 120
 #
+# monit_mail_format:          format for notification mails
+#                             Default: None
+#
 
 class monit {
 
