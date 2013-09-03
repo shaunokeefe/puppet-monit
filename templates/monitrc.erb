@@ -2,8 +2,12 @@
 # 
 # This file is handled by puppet, any local changes will be lost
 #
+<% if @monit_alert %>
+<% @monit_alert.each do |val| -%>
+set alert <%= val %>
+<% end -%>
+<% end %>
 
-set alert <%= has_variable?("monit_alert") ? monit_alert : monit_default_alert %>
 
 <%- if monit_enable_httpd.to_s == 'yes' then -%>
 <%# BEGIN functions %>

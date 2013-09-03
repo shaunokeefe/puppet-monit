@@ -6,6 +6,9 @@ check process <%= name %>
   with pidfile "<%= pidfile %>"
   start program = "<%= start %>" <%= start_extras %>
   stop program  = "<%= stop %>" <%= stop_extras %>
+  <% @alert.each do |val| -%>
+  alert <%= val %> {<% @alert_types.each do |at| -%><%= at %><% end -%>}
+  <% end -%>
 <% customlines.to_a.each do |line| -%>
   <%= line %>
 <% end -%>
