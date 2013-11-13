@@ -1,0 +1,8 @@
+# Configuration snippet for <%= name %>
+# 
+# This file is handled by puppet, all local modifications will be lost
+
+check program <%= name %> with path <%= path %>
+<% customlines.to_a.each do |line| -%>
+  <%= line %>
+<% end -%>
